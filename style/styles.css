@@ -1,0 +1,146 @@
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.85);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e6e6e6;
+            background-image: radial-gradient(circle at top right, #0e2e0c, #0c0d35);
+            min-height: 100vh;
+            margin: 0;
+            color: #1d1d1f;
+            overflow-x: hidden;
+        }
+
+        /* Barra de navegación responsiva */
+        .apple-glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+        }
+
+        /* Overlay de Búsqueda Móvil Distintivo */
+        #search-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            z-index: 100;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        #search-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .search-container-mobile {
+            transform: translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #search-overlay.active .search-container-mobile {
+            transform: translateY(0);
+        }
+
+        /* Contenedor Principal Adaptable */
+        .section-one {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 40px 20px;
+        }
+
+        .section-one-principal {
+            width: 100%;
+            max-width: 1100px;
+            min-height: 450px;
+            background: var(--card-bg);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .section-one-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            width: 100%;
+            max-width: 280px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+            .logo-container {
+                max-width: 180px;
+            }
+        }
+
+        .main-logo-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+        }
+
+        .slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: #3a3a3c;
+            max-width: 500px;
+            line-height: 1.6;
+            font-style: italic;
+            font-weight: 400;
+            margin: 0 auto;
+        }
+
+        /* Buscador Escritorio */
+        .search-input {
+            height: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .search-input:focus {
+            width: 180px !important;
+            background: rgba(255, 255, 255, 0.15);
+            outline: none;
+        }
+
+        /* Estilos Sugerencias */
+        .suggestion-chip {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .suggestion-chip:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
